@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      :root {
+        color-scheme: dark light;
+        --bg: #0f1115; --text: #e7e9ee; --muted: #9aa0ac; --accent: #2b8fff; --link: #6ea8ff;
+      }
+      @media (prefers-color-scheme: light) {
+        :root { --bg: #ffffff; --text: #14181f; --muted: #5b6475; --accent: #1877f2; --link: #1877f2; }
+      }
+      * { box-sizing: border-box; font-family: -apple-system, "Segoe UI", system-ui, sans-serif; }
+      body { width: 280px; margin: 0; padding: 16px; background: var(--bg); color: var(--text); }
+      h1 { font-size: 15px; margin: 0 0 2px; letter-spacing: -0.2px; }
+      p { font-size: 12px; color: var(--muted); margin: 0 0 14px; line-height: 1.4; }
+      button {
+        width: 100%; border: 0; border-radius: 10px; padding: 10px 12px;
+        font-size: 13px; font-weight: 600; cursor: pointer;
+        background: var(--accent); color: #fff;
+      }
+      button:hover { filter: brightness(1.08); }
+      .status { display: flex; align-items: center; gap: 8px; font-size: 12px; margin-top: 12px; color: var(--muted); }
+      .dot { width: 8px; height: 8px; border-radius: 50%; background: #f0b429; flex: none; }
+      .dot.ok { background: #2ecc71; }
+      .status a { color: var(--link); text-decoration: none; }
+    </style>
+  </head>
+  <body>
+    <h1>Xmate</h1>
+    <p>See everyone you follow on X with full stats — last active, followers, following, tweets &amp; more.</p>
+    <button id="open">Open Following Manager</button>
+    <div class="status"><span class="dot" id="dot"></span><span id="msg">Checking…</span></div>
+    <script src="popup.js"></script>
+  </body>
+</html>

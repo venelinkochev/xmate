@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Xmate — Following Manager</title>
+    <link rel="stylesheet" href="following.css" />
+  </head>
+  <body>
+    <div class="wrap">
+      <header class="hero">
+        <div class="hero-left">
+          <div class="logo">𝕏</div>
+          <div>
+            <h1>Following Manager</h1>
+            <p class="sub">Everyone you follow on X, with the full stats. Click any card to open their profile.</p>
+          </div>
+        </div>
+        <div class="hero-stats" id="heroStats"></div>
+      </header>
+
+      <div id="banner" class="banner hidden"></div>
+
+      <section class="toolbar">
+        <button id="fetchBtn" class="primary">Find Following</button>
+
+        <div class="field search">
+          <svg viewBox="0 0 24 24" width="16" height="16"><path fill="currentColor" d="M21 21l-4.35-4.35M11 18a7 7 0 1 1 0-14 7 7 0 0 1 0 14z" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+          <input id="search" type="text" placeholder="Search name, @handle or bio…" />
+        </div>
+
+        <div class="field">
+          <label>Sort</label>
+          <select id="sortBy">
+            <option value="none">Default</option>
+            <option value="followers">Followers</option>
+            <option value="following">Following</option>
+            <option value="lastActive">Last Active</option>
+            <option value="createdAt">Created</option>
+            <option value="tweets">Tweets</option>
+            <option value="ratio">Follow ratio</option>
+          </select>
+        </div>
+
+        <div class="field">
+          <label>Order</label>
+          <select id="order">
+            <option value="desc">High → Low</option>
+            <option value="asc">Low → High</option>
+          </select>
+        </div>
+
+        <div class="chips">
+          <button class="chip" data-filter="nonfollowers">Doesn't follow back</button>
+          <button class="chip" data-filter="followsyou">Follows you</button>
+          <button class="chip" data-filter="verified">Verified</button>
+          <button class="chip" data-filter="unverified">Unverified</button>
+        </div>
+      </section>
+
+      <div id="progress" class="progress hidden"><div class="bar"></div><span id="progressText"></span></div>
+
+      <div id="resultMeta" class="result-meta hidden"></div>
+      <main id="grid" class="grid"></main>
+      <div id="empty" class="empty hidden"></div>
+      <div class="loadmore-wrap"><button id="loadMore" class="loadmore hidden"></button></div>
+    </div>
+
+    <script src="following.js"></script>
+  </body>
+</html>
