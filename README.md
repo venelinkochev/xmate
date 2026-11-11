@@ -61,3 +61,9 @@ icons/               toolbar icons
 
 Everything runs locally in your browser using your existing X session. No external servers,
 no analytics, no account required.
+
+## License
+
+[MIT](LICENSE) © 2026 Venelin Kochev
+
+Xmate is an independent project and is not affiliated with, endorsed by, or sponsored by X Corp.
